@@ -1,0 +1,884 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>C1.Win.C1SplitContainer.4.5.2</name>
+  </assembly>
+  <members>
+    <member name="T:C1.Win.C1SplitContainer.C1SplitContainer">
+      <summary>
+            Represents a container for resizable docked panels.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.Panels">
+      <summary>
+            Gets the collection of panels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.UpdateNestedContainers">
+      <summary>
+            Gets or sets whether changes to the style properties should affect the nested split containers as well.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.VisualStyle">
+      <summary>
+            Gets or sets the visual style for the <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetVisualStyle">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.VisualStyle" /> ambient property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.UseSizingCursor">
+      <summary>
+            Gets or sets whether the sizing cursor should appear for splitters instead of the split cursor.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.BorderColor">
+      <summary>
+            Gets or sets the border color of a <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.BorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.FixedLineColor">
+      <summary>
+            Gets or sets the color of a fixed dividing line.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetFixedLineColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.FixedLineColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.CloseButtonToolTip">
+      <summary>
+            Gets or sets the tooltip text for the Close button of a panel.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetCloseButtonToolTip">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.CloseButtonToolTip" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsingAreaColor">
+      <summary>
+            Gets or sets the color of the collapsing area.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetCollapsingAreaColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsingAreaColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsingCueColor">
+      <summary>
+            Gets or sets the color of a small triangle drawing on the collapsing handle.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetCollapsingCueColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsingCueColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.EnlargeCollapsingHandle">
+      <summary>
+            Gets or sets whether the large image should appear as the collapsing handle.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsedToolTip">
+      <summary>
+            Gets or sets the tooltip text for the expanding handle of a collapsed panel.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetCollapsedToolTip">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsedToolTip" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsingToolTip">
+      <summary>
+            Gets or sets the tooltip text for the collapsing handle of an expanded panel.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetCollapsingToolTip">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.CollapsingToolTip" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderBackColor">
+      <summary>
+            Gets or sets the background color of a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> header.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetHeaderBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderBackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderForeColor">
+      <summary>
+            Gets or sets the foreground color of a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> header.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetHeaderForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.SplitterColor">
+      <summary>
+            Gets or sets the color of a splitter element.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetSplitterColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.SplitterColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.SplitterMovingColor">
+      <summary>
+            Gets or sets the color of a splitter being moved by the user.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ResetSplitterMovingColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.SplitterMovingColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.SplitterMovingOpacity">
+      <summary>
+            Gets or sets the opacity level of a splitter being moved by the user.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.BorderWidth">
+      <summary>
+            Gets or sets the border width of the split container.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.BoldHeaderFont">
+      <summary>
+            Gets or sets whether the panel headers use a bold font.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.LineBelowHeader">
+      <summary>
+            Gets or sets whether a horizontal line should appear below panel headers.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderLineWidth">
+      <summary>
+            Gets or sets the width of a horizontal line that appears below panel headers.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.SplitterWidth">
+      <summary>
+            Gets or sets the width of a splitter element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.FixedLineWidth">
+      <summary>
+            Gets or sets the width of a fixed dividing line.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderHeight">
+      <summary>
+            Gets or sets the height of the <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> header.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.HeaderTextOffset">
+      <summary>
+            Gets or sets the offset value (in pixels) of the panel caption text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.TextRenderingHint">
+      <summary>
+            Gets or sets the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.TextRenderingHint" /> that controls text rendering quality.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.DefaultSize">
+      <summary>
+            Gets the default size of the <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipGradient">
+      <summary>
+            Gets or sets a background gradient for the tooltips.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipBackColor">
+      <summary>
+            Gets or sets the background color of the tooltip window.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipForeColor">
+      <summary>
+            Gets or sets the foreground color of the tooltip window.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipFont">
+      <summary>
+            Gets or sets the default font used to display the tooltip.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipBorder">
+      <summary>
+            Gets or sets whether the tooltip window should display a solid border.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipBorderColor">
+      <summary>
+            Gets or sets whether the color of the border drawn around the tooltip when the <see cref="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipBorder" /> property is set to true.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipShadow">
+      <summary>
+            Gets or sets whether the tooltip window should display a shadow.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipRoundedCorners">
+      <summary>
+            Gets or sets whether the tooltip window has rounded corners.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.ToolTipUseFading">
+      <summary>
+            Gets or sets whether a fade effect should be used when displaying the tooltip.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitContainer.Padding">
+      <summary>
+            This property is not relevant for this class.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnBackColorChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.BackColorChanged" /> event. 
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnForeColorChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.ForeColorChanged" /> event. 
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnEnabledChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.EnabledChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnVisibleChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.VisibleChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint" /> event. 
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnFontChanged(System.EventArgs)">
+      <summary>
+            Updates the tooltip and caption font.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnResize(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Resize" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+      <summary>
+            Scales a control's location, size, padding and margin.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnRightToLeftChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.RightToLeftChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitContainer.OnParentChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.ParentChanged" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitContainer.SplitterMoving">
+      <summary>
+            Occurs when the splitter control is in the process of moving.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitContainer.SplitterMoved">
+      <summary>
+            Occurs when the splitter control is moved.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.C1SplitterPanel">
+      <summary>
+            Represents a single panel in a <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.SplitContainer">
+      <summary>
+            Gets a <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" /> that this <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> belongs to.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.DoubleBuffered">
+      <summary>
+            Gets or sets whether the panel should use double buffering to reduce flicker.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.BorderColor">
+      <summary>
+            Gets or sets the border color of a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.BorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.BorderWidth">
+      <summary>
+            Gets or sets the border width of a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Padding">
+      <summary>
+            Gets or sets the interior spacing of the <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetPadding">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.Padding" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.ShowCloseButton">
+      <summary>
+            Gets or sets whether the Close button should appear in the panel header.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.CloseButtonToolTip">
+      <summary>
+            Gets or sets the tooltip text for the Close button.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Collapsible">
+      <summary>
+            Gets or sets whether the panel can be collapsed.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Collapsed">
+      <summary>
+            Gets or sets whether the panel is collapsed (duplicates the Visible property).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.CollapsedToolTip">
+      <summary>
+            Gets or sets the tooltip text for the expanding handle of the panel in collapsed state.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.CollapsingToolTip">
+      <summary>
+            Gets or sets the tooltip text for the collapsing handle of the expanded panel.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.ResizeWhileDragging">
+      <summary>
+            Gets or sets whether the panel should be resized while the user is dragging the splitter.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Dock">
+      <summary>
+            Gets or sets which panel border is docked to its parent <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.SizeRatio">
+      <summary>
+            Gets or sets the size of a panel as percentage of the whole remaining area.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetSizeRatio">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.SizeRatio" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.KeepRelativeSize">
+      <summary>
+            Gets or sets whether the panel tries to keep its relative size when the owner container is resized.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Resizable">
+      <summary>
+            Gets or sets whether the panel can be resized with a splitter.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Height">
+      <summary>
+            Gets or sets the height of the panel.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetHeight">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.Height" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Width">
+      <summary>
+            Gets or sets the width of the panel.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetWidth">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.Width" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.MinHeight">
+      <summary>
+            Gets or sets the minimum height of the panel.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.MinWidth">
+      <summary>
+            Gets or sets the minimum width of the panel.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Text">
+      <summary>
+            Gets or sets the panel caption.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderBackColor">
+      <summary>
+            Gets or sets the background color of the panel header.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetHeaderBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderBackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderForeColor">
+      <summary>
+            Gets or sets the foreground color of the panel header.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetHeaderForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderTextAlign">
+      <summary>
+            Gets or sets alignment of the panel caption text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderLineColor">
+      <summary>
+            Gets or sets the color of a horizontal line that appears below the panel header.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.ResetHeaderLineColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderLineColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Location">
+      <summary>
+            Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Size">
+      <summary>
+            Gets the height and width of the control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.RightToLeft">
+      <summary>
+            Gets a value indicating whether panel's elements are aligned to support locales using right-to-left fonts.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Margin">
+      <summary>
+            This property is not relevant for this class.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.Anchor">
+      <summary>
+            This property is not relevant for this class.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.AutoSize">
+      <summary>
+            This property is not relevant for this class.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.MaximumSize">
+      <summary>
+            This property is not relevant for this class.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.MinimumSize">
+      <summary>
+            This property is not relevant for this class.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitterPanel.CloseButtonClick">
+      <summary>
+            Occurs when the Close button is clicked in the panel header.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnCloseButtonClick(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.CloseButtonClick" /> event.
+            </summary>
+      <param name="e">
+        <see cref="T:System.EventArgs" /> that contains the event parameters.</param>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderClick">
+      <summary>
+            Occurs when the panel header is clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnHeaderClick(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderClick" /> event.
+            </summary>
+      <param name="e">
+        <see cref="T:System.EventArgs" /> that contains the event parameters.</param>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderDoubleClick">
+      <summary>
+            Occurs when the panel header is double-clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnHeaderDoubleClick(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.HeaderDoubleClick" /> event.
+            </summary>
+      <param name="e">
+        <see cref="T:System.EventArgs" /> that contains the event parameters.</param>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawHeader">
+      <summary>
+            Occurs when background of the panel header should be repainted.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnDrawHeader(C1.Win.C1SplitContainer.DrawHeaderEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawHeader" /> event.
+            </summary>
+      <param name="e">
+        <see cref="T:C1.Win.C1SplitContainer.DrawHeaderEventArgs" /> that contains the event parameters.</param>
+    </member>
+    <member name="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawSplitter">
+      <summary>
+            Occurs when the panel splitter should be repainted.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnDrawSplitter(C1.Win.C1SplitContainer.DrawSplitterEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawSplitter" /> event.
+            </summary>
+      <param name="e">
+        <see cref="T:C1.Win.C1SplitContainer.DrawSplitterEventArgs" /> that contains the event parameters.</param>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.C1SplitterPanel.CreateParams">
+      <summary>
+            Gets the required creation parameters when the control handle is created.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnVisibleChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.VisibleChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.SetVisibleCore(System.Boolean)">
+      <summary>
+            Sets the control to the specified visible state.
+            </summary>
+      <param name="value">true to make the control visible; otherwise, false.</param>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.C1SplitterPanel.OnControlAdded(System.Windows.Forms.ControlEventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.ControlAdded" /> event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.PanelDockStyle">
+      <summary>
+            Specifies position in which a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> is docked.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelDockStyle.Top">
+      <summary>
+            The <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />'s top edge is docked to the top of its containing <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelDockStyle.Bottom">
+      <summary>
+            The <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />'s bottom edge is docked to the bottom of its containing <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelDockStyle.Left">
+      <summary>
+            The <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />'s left edge is docked to the left edge of its containing <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelDockStyle.Right">
+      <summary>
+            The <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" />'s right edge is docked to the right edge of its containing <see cref="T:C1.Win.C1SplitContainer.C1SplitContainer" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.PanelTextAlign">
+      <summary>
+            Specifies alignment of text on the panel caption.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelTextAlign.Left">
+      <summary>
+            Text is aligned on the left.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelTextAlign.Center">
+      <summary>
+            Text is centered on the panel header.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.PanelTextAlign.Right">
+      <summary>
+            Text is aligned on the right.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.ToolTipGradient">
+      <summary>
+            Specifies a background gradient for the tooltips.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.None">
+      <summary>
+            Use no background gradient.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.Automatic">
+      <summary>
+            Use a gradient that matches the current system Visual Style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.Silver">
+      <summary>
+            Use a silver background gradient.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.Blue">
+      <summary>
+            Use a blue background gradient.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.Gold">
+      <summary>
+            Use a gold background gradient.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.Olive">
+      <summary>
+            Use an olive background gradient.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.ToolTipGradient.Vista">
+      <summary>
+            Use the Vista-style background gradient.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.VisualStyle">
+      <summary>
+            Specifies a visual style to use when rendering the control.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Custom">
+      <summary>
+            Used-defined color scheme.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.System">
+      <summary>
+            Plain Windows color scheme.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Office2007Black">
+      <summary>
+            Office 2007 Black visual style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Office2007Blue">
+      <summary>
+            Office 2007 Blue visual style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Office2007Silver">
+      <summary>
+            Office 2007 Silver visual style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Office2010Black">
+      <summary>
+            Office 2010 Black visual style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Office2010Blue">
+      <summary>
+            Office 2010 Blue visual style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Office2010Silver">
+      <summary>
+            Office 2010 Silver visual style.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1SplitContainer.VisualStyle.Windows7">
+      <summary>
+            Windows 7 visual style.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.DrawHeaderEventHandler">
+      <summary>
+            Represents a delegate that handles the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawHeader" /> event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.DrawHeaderEventArgs">
+      <summary>
+            Provides data for the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawHeader" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.DrawHeaderEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SplitContainer.DrawHeaderEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.DrawHeaderEventArgs.Graphics">
+      <summary>
+            Gets the Graphics used to paint the panel header.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.DrawHeaderEventArgs.Bounds">
+      <summary>
+            Gets the location and size of a rectangle in which to paint.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.DrawHeaderEventArgs.Finished">
+      <summary>
+            Gets or sets a value indicating whether all painting in the panel header is complete.
+            </summary>
+      <remarks>
+            The panel text will not be drawn if the value of this property is true.
+            </remarks>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.DrawSplitterEventHandler">
+      <summary>
+            Represents a delegate that handles the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawSplitter" /> event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.DrawSplitterEventArgs">
+      <summary>
+            Provides data for the <see cref="E:C1.Win.C1SplitContainer.C1SplitterPanel.DrawSplitter" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.DrawSplitterEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1SplitContainer.DrawSplitterEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.DrawSplitterEventArgs.Graphics">
+      <summary>
+            Gets the Graphics used to paint the splitter.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.DrawSplitterEventArgs.Bounds">
+      <summary>
+            Gets the location and size of a rectangle in which to paint.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.DrawSplitterEventArgs.Vertical">
+      <summary>
+            Gets a value that indicates whether the splitter is vertical (true) or horizontal (false).
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.PanelCollection">
+      <summary>
+            Represents a collection of <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> objects.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.BeginUpdate">
+      <summary>
+            Maintains performance while views are added or being changed.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.EndUpdate">
+      <summary>
+            Resumes processing after it has been suspended by a call to <see cref="M:C1.Win.C1SplitContainer.PanelCollection.BeginUpdate" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.Clear(System.Boolean)">
+      <summary>
+            Removes all components from the collection, then disposes the components.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.InsertItem(System.Int32,C1.Win.C1SplitContainer.C1SplitterPanel)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> into the <see cref="T:C1.Win.C1SplitContainer.PanelCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.SetItem(System.Int32,C1.Win.C1SplitContainer.C1SplitterPanel)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1SplitContainer.C1SplitterPanel" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the item at the specified index of the <see cref="T:C1.Win.C1SplitContainer.PanelCollection" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1SplitContainer.PanelCollection.ClearItems">
+      <summary>
+            Removes all items from the <see cref="T:C1.Win.C1SplitContainer.PanelCollection" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1SplitContainer.Localization.Strings">
+      <summary>
+            The <see cref="T:C1.Win.C1SplitContainer.Localization.Strings" /> class contains static properties used for localization.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.Localization.Strings.ResourceManager">
+      <summary>
+            The <see cref="P:C1.Win.C1SplitContainer.Localization.Strings.ResourceManager" /> object used for lookup resources.
+            </summary>
+      <remarks>Set this property to the valid value if 
+            you define resources in a Custom Control assembly.</remarks>
+    </member>
+    <member name="P:C1.Win.C1SplitContainer.Localization.Strings.UICulture">
+      <summary>
+            Returns default <see cref="T:System.Globalization.CultureInfo" /> object used as fallback culture.
+            </summary>
+    </member>
+  </members>
+</doc>

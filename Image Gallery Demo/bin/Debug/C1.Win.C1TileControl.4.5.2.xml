@@ -1,0 +1,4742 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>C1.Win.C1TileControl.4.5.2</name>
+  </assembly>
+  <members>
+    <member name="T:C1.Win.C1Tile.C1TileControl">
+      <summary>
+            Represents a scrollable surface with tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.LoadXml(System.String)">
+      <summary>
+            Loads the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> from an XML file.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.LoadXml(System.IO.Stream)">
+      <summary>
+            Loads the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> from a <see cref="T:System.IO.Stream" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.LoadXml(System.Xml.XmlDocument)">
+      <summary>
+            Loads the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> from an <see cref="T:System.Xml.XmlDocument" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.SaveXml(System.String)">
+      <summary>
+            Saves the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> into an XML file.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.SaveXml(System.String,System.Text.Encoding)">
+      <summary>
+            Saves the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> into an XML file.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.SaveXml(System.IO.Stream)">
+      <summary>
+            Saves the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> into a <see cref="T:System.IO.Stream" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.SaveXml(System.IO.Stream,System.Text.Encoding)">
+      <summary>
+            Saves the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> into a <see cref="T:System.IO.Stream" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.SaveXml(System.Xml.XmlWriter)">
+      <summary>
+            Saves the layout of <see cref="T:C1.Win.C1Tile.C1TileControl" /> into an <see cref="T:System.Xml.XmlWriter" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.DataSource">
+      <summary>
+            Gets or sets the data source object for the tile control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.DataMember">
+      <summary>
+            Gets or sets the specific list in a <see cref="P:C1.Win.C1Tile.C1TileControl.DataSource" /> that is bound to the tile control.
+            </summary>
+      <remarks>
+        <para>If a <see cref="P:C1.Win.C1Tile.C1TileControl.DataSource" /> contains multiple sources of data, you should set the 
+            <see cref="P:C1.Win.C1Tile.C1TileControl.DataMember" /> property to one of the sources.</para>
+        <para>For example, if the DataSource is a DataSet contains three tables named Customers, 
+            Orders, and OrderDetails, you must specify one of the tables to bind to.</para>
+        <para>If the DataSet contains only one DataTable, you may set the 
+            DataMember property to an empty string.</para>
+      </remarks>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.PropertyMappings">
+      <summary>
+            Gets the collection of tile property mappings.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.FilterItem">
+      <summary>
+            Occurs when loading an item from the data source. It allows to skip some items if necessary.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnFilterItem(C1.Win.C1Tile.FilterItemEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.FilterItem" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.FormatValue">
+      <summary>
+            Occurs when a data value has to be mapped to a tile property.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnFormatValue(C1.Win.C1Tile.FormatValueEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.FormatValue" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.CompareGroups">
+      <summary>
+            Occurs when sorting groups in <see cref="T:C1.Win.C1Tile.C1TileControl" /> to compare two groups before their reordering.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnCompareGroups(C1.Win.C1Tile.CompareGroupsEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.CompareGroups" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.CompareTiles">
+      <summary>
+            Occurs when sorting tiles in a <see cref="T:C1.Win.C1Tile.Group" /> to compare two tiles before their reordering.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnCompareTiles(C1.Win.C1Tile.CompareTilesEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.CompareTiles" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.SetDataBinding(System.Object,System.String)">
+      <summary>
+            Sets the DataSource and DataMember properties at run time.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnBindingContextChanged(System.EventArgs)">
+      <summary>
+            Raises the BindingContextChanged event.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.Groups">
+      <summary>
+            Gets the collection of tile groups.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.DefaultTemplate">
+      <summary>
+            Gets the default template for tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.Templates">
+      <summary>
+            Gets the collection of custom tile templates.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CommonImage1">
+      <summary>
+            Gets the first common image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CommonImage2">
+      <summary>
+            Gets the second common image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CommonImage3">
+      <summary>
+            Gets the third common image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.PassthroughNavigation">
+      <summary>
+            Gets or sets whether the keyboard should navigate to the next row/column after focusing the last tile in the current row/column (for vertical/horizontal layout).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.ToolTipInitialDelay">
+      <summary>
+            Gets or sets the time that passes before the tooltips appear, in milliseconds.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.ShowToolTips">
+      <summary>
+            Gets or sets whether the tooltips should appear for tiles and partially visible group captions.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CheckedTiles">
+      <summary>
+            Gets an array of all visible checked tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.Orientation">
+      <summary>
+            Gets or sets whether the groups are arranged horizontally or vertically.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.MaximumRowsOrColumns">
+      <summary>
+            Gets or sets the maximum number of cell rows (for horizontal orientation)
+            or cell columns (for vertical orientation) in automatic layout mode.
+            </summary>
+      <remarks>
+            If this property is set to zero, the number of row/columns depends
+            on the actual available space.
+            </remarks>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.AutomaticLayout">
+      <summary>
+            Gets or sets whether the tiles should be arranged automatically or manually.
+            The <see cref="P:C1.Win.C1Tile.Tile.LeftCell" /> and <see cref="P:C1.Win.C1Tile.Tile.TopCell" /> properties are ignored
+            in automatic mode.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.BackImageLayout">
+      <summary>
+            Gets or sets the background image layout.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.MovingBackground">
+      <summary>
+            Gets or sets whether the background image should be scrolled with the tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.Padding">
+      <summary>
+            Gets or sets the interior spacing of the <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetPadding">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.Padding" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.Text">
+      <summary>
+            Gets or sets the main caption text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TextSize">
+      <summary>
+            Gets or sets the font size for the caption text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TextBold">
+      <summary>
+            Gets or sets a value that indicates whether the caption text font is bold.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TextX">
+      <summary>
+            Gets or sets the x-coordinate of the text caption.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TextY">
+      <summary>
+            Gets or sets the y-coordinate of the text caption.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.SurfacePadding">
+      <summary>
+            Gets or sets the interior spacing of the scrollable surface.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetSurfacePadding">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.SurfacePadding" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.SurfaceContentAlignment">
+      <summary>
+            Gets or sets the alignment of groups on the scrollable surface.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupSpacing">
+      <summary>
+            Gets or sets the gap between groups on the scrollable surface.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupPadding">
+      <summary>
+            Gets or sets the interior spacing of a tile group.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetGroupPadding">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.GroupPadding" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupFont">
+      <summary>
+            Gets or sets the font for group captions.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupTextSize">
+      <summary>
+            Gets or sets the font size for group captions.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupTextBold">
+      <summary>
+            Gets or sets a value that indicates whether the group caption font is bold.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupForeColor">
+      <summary>
+            Gets or sets the foreground color of a group caption.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetGroupForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.GroupForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupTextX">
+      <summary>
+            Gets or sets the horizontal offset of a group caption.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.GroupTextY">
+      <summary>
+            Gets or sets the vertical offset of a group caption.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.ImageList">
+      <summary>
+            Gets or sets the ImageList that contains the images to display on the tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CellHeight">
+      <summary>
+            Gets or sets the height of a single tile cell.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CellWidth">
+      <summary>
+            Gets or sets the width of a single tile cell.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CellSpacing">
+      <summary>
+            Gets or sets the gap between tile cells in a group.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TileBackColor">
+      <summary>
+            Gets or sets the default background color of tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetTileBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.TileBackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TileBorderColor">
+      <summary>
+            Gets or sets the color of a thin border that is drawn around tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetTileBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.TileBorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.TileForeColor">
+      <summary>
+            Gets or sets the default foreground color of tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetTileForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.TileForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.HotBackColor">
+      <summary>
+            Gets or sets the color that replaces <see cref="P:C1.Win.C1Tile.Tile.BackColor" /> when a tile is hovered with the mouse.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetHotBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.HotBackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.HotForeColor">
+      <summary>
+            Gets or sets the color that replaces <see cref="P:C1.Win.C1Tile.Tile.ForeColor" /> when a tile is hovered with the mouse and <see cref="P:C1.Win.C1Tile.C1TileControl.HotBackColor" /> is set.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetHotForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.HotForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.HotCheckBackColor">
+      <summary>
+            Gets or sets the color that replaces <see cref="P:C1.Win.C1Tile.Tile.BackColor" /> when a checked tile is hovered with the mouse.
+            </summary>
+      <remarks>
+            The value of this property is ignored if either <see cref="P:C1.Win.C1Tile.C1TileControl.HotBackColor" /> or <see cref="P:C1.Win.C1Tile.C1TileControl.CheckBackColor" /> are not set.
+            </remarks>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetHotCheckBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.HotCheckBackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.HotCheckForeColor">
+      <summary>
+            Gets or sets the color that replaces <see cref="P:C1.Win.C1Tile.Tile.ForeColor" /> when a checked tile is hovered with the mouse.
+            </summary>
+      <remarks>
+            The value of this property is ignored if either <see cref="P:C1.Win.C1Tile.C1TileControl.HotBackColor" /> or <see cref="P:C1.Win.C1Tile.C1TileControl.CheckBackColor" /> are not set.
+            </remarks>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetHotCheckForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.HotCheckForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.HotBorderColor">
+      <summary>
+            Gets or sets the color of tile border when the tile is hovered with the mouse.
+            </summary>
+      <remarks>
+            This property is ignored if the value of <see cref="P:C1.Win.C1Tile.C1TileControl.HotBackColor" /> is not empty.
+            </remarks>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetHotBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.HotBorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.FocusedTile">
+      <summary>
+            Gets or sets the tile that has the keyboard focus.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.FocusedBorderColor">
+      <summary>
+            Gets or sets the color of tile border when the tile is selected with keyboard.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetFocusedBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.FocusedBorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.AllowChecking">
+      <summary>
+            Gets or sets whether the user can check/uncheck tiles using a swipe gesture or mouse right-click.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.UncheckTilesOnClick">
+      <summary>
+            Gets or sets a value indicating whether all tiles are unchecked after clicking a tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.AllowRearranging">
+      <summary>
+            Gets or sets whether the user can move tiles with the mouse or touch device.
+            </summary>
+      <remarks>
+            It has no effect if the <see cref="P:C1.Win.C1Tile.C1TileControl.AutomaticLayout" /> property is set to false.
+            </remarks>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.SwipeDistance">
+      <summary>
+            Gets or sets the distance for a swipe gesture to select a tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.SwipeRearrangeDistance">
+      <summary>
+            Gets or sets the distance for a swipe gesture to start rearranging tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.MovingTileOpacity">
+      <summary>
+            Gets or sets the opacity level of a tile being moved by the user.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CheckBackColor">
+      <summary>
+            Gets or sets the color that replaces <see cref="P:C1.Win.C1Tile.Tile.BackColor" /> when a tile is checked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetCheckBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.CheckBackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CheckForeColor">
+      <summary>
+            Gets or sets the color that replaces <see cref="P:C1.Win.C1Tile.Tile.ForeColor" /> when a tile is checked and <see cref="P:C1.Win.C1Tile.C1TileControl.CheckBackColor" /> is set.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetCheckForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.CheckForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CheckBorderColor">
+      <summary>
+            Gets or sets the color of tile border when the tile is checked.
+            </summary>
+      <remarks>
+            This property is ignored if the value of <see cref="P:C1.Win.C1Tile.C1TileControl.CheckBackColor" /> is not empty.
+            </remarks>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetCheckBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.CheckBorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CheckMarkColor">
+      <summary>
+            Gets or sets the color of the check mark for checked tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetCheckMarkColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.CheckMarkColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.CheckWaitingColor">
+      <summary>
+            Gets or sets the color of the supposed check mark.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetCheckWaitingColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.CheckWaitingColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.ScrollBarStyle">
+      <summary>
+            Gets or sets whether the default or system scroll bar should appear.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.ScrollOffset">
+      <summary>
+            Gets or sets the negative or zero offset of the scrollable area.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.OffsetLimit">
+      <summary>
+            Gets the minimal negative offset of the scrolling area.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.SBThumbBorderColor">
+      <summary>
+            Gets or sets the color of the scroll bar thumb border.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetSBThumbBorderColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.SBThumbBorderColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.SBThumbInnerColor">
+      <summary>
+            Gets or sets the color of the scroll bar thumb interior.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ResetSBThumbInnerColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.C1TileControl.SBThumbInnerColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.AllowPanningFeedback">
+      <summary>
+            Gets or sets whether the owner form has to display a visual cue when a user
+            reaches the end of a pannable area.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.ImeMode">
+      <summary>
+            This property is not relevant to this class.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.TileClicked">
+      <summary>
+            Occurs when some tile is clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnTileClicked(C1.Win.C1Tile.TileEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.TileClicked" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.TileMoved">
+      <summary>
+            Occurs when some tile is moved.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnTileMoved(C1.Win.C1Tile.TileEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.TileMoved" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.TileChecked">
+      <summary>
+            Occurs when some tile is checked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnTileChecked(C1.Win.C1Tile.TileEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.TileChecked" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.C1TileControl.TileUnchecked">
+      <summary>
+            Occurs when some tile is unchecked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnTileUnchecked(C1.Win.C1Tile.TileEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.C1TileControl.TileUnchecked" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.BeginUpdate">
+      <summary>
+            Maintains drawing performance while applying massive changes to <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.EndUpdate">
+      <summary>
+            Resumes processing after it has been suspended by a call to <see cref="M:C1.Win.C1Tile.C1TileControl.BeginUpdate" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ScrollToGroup(C1.Win.C1Tile.Group,System.Boolean)">
+      <summary>
+            Scrolls the surface and make the specified <see cref="T:C1.Win.C1Tile.Group" /> visible.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ScrollToTile(C1.Win.C1Tile.Tile,System.Boolean)">
+      <summary>
+            Scrolls the surface and make the specified <see cref="T:C1.Win.C1Tile.Tile" /> visible.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.GetTileAt(System.Drawing.Point)">
+      <summary>
+            Gets a <see cref="T:C1.Win.C1Tile.Tile" /> at the point specified in <see cref="T:C1.Win.C1Tile.C1TileControl" />'s client coordinates.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.UncheckAllTiles">
+      <summary>
+            Removes a check mark from all tiles.
+            </summary>
+      <returns>Returns true if at least one tile was unchecked.</returns>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ClearCache">
+      <summary>
+            Releases memory occupied by internal cached images. It doesn't force garbage collection though.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.CreateAccessibilityInstance">
+      <summary>
+            Returns the custom AccessibleObject for the C1TileControl.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.Cursor">
+      <summary>
+            Gets or sets the cursor that is displayed when the mouse pointer is over the control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.C1TileControl.DefaultSize">
+      <summary>
+            Gets the default size of the <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+      <summary>
+            Scales a control's location, size, padding and margin.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnFontChanged(System.EventArgs)">
+      <summary>
+            Raises the FontChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnBackColorChanged(System.EventArgs)">
+      <summary>
+            Raises the BackColorChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnBackgroundImageChanged(System.EventArgs)">
+      <summary>
+            Raises the BackgroundImageChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnRightToLeftChanged(System.EventArgs)">
+      <summary>
+            Raises the RightToLeftChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnResize(System.EventArgs)">
+      <summary>
+            Raises the Resize event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            Raises the MouseDown event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnClick(System.EventArgs)">
+      <summary>
+            Raises the Click event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseClick(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            Raises the MouseClick event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            Raises the MouseUp event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            Raises the MouseDoubleClick event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            Raises the MouseMove event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseEnter(System.EventArgs)">
+      <summary>
+            Raises the MouseEnter event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnMouseLeave(System.EventArgs)">
+      <summary>
+            Raises the MouseLeave event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <summary>
+            Raises the Paint event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.WndProc(System.Windows.Forms.Message@)">
+      <summary>
+            Processes Windows messages.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.IsInputKey(System.Windows.Forms.Keys)">
+      <summary>
+            Determines whether the specified key is regular input key or a special key that requires preprocessing.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+      <summary>
+            Raises the KeyDown event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+      <summary>
+            Raises the KeyPress event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnChangeUICues(System.Windows.Forms.UICuesEventArgs)">
+      <summary>
+            Raises the ChangeUICues event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnGotFocus(System.EventArgs)">
+      <summary>
+            Raises the GotFocus event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.C1TileControl.OnLostFocus(System.EventArgs)">
+      <summary>
+            Raises the LostFocus event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.SlideTransition">
+      <summary>
+            Identifies the method of transition from one slide to another.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SlideTransition.None">
+      <summary>
+            Replaces slides immediately.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SlideTransition.PushFromBottom">
+      <summary>
+            Pushes the new slide from bottom to top.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SlideTransition.PushFromTop">
+      <summary>
+            Pushes the new slide from top to bottom.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SlideTransition.PushFromLeft">
+      <summary>
+            Pushes the new slide from left to right.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SlideTransition.PushFromRight">
+      <summary>
+            Pushes the new slide from right to left.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SlideTransition.Fade">
+      <summary>
+            Fades the previous slide smoothly.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.BackImageLayout">
+      <summary>
+            Defines the different types of the background image layout.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackImageLayout.Clip">
+      <summary>
+            The image is left-aligned at the top across the control's client rectangle.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackImageLayout.Tile">
+      <summary>
+            The image is tiled across the control's client rectangle.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackImageLayout.Stretch">
+      <summary>
+            The image is streched across the control's client rectangle.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackImageLayout.Zoom">
+      <summary>
+            The image is enlarged within the control's client rectangle.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ForeImageLayout">
+      <summary>
+            Defines the different types of the foreground image layout.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.Clip">
+      <summary>
+            The image is clipped if necessary.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.ClipNoPadding">
+      <summary>
+            The image is displayed as it is and doesn't take into account the owner's Padding.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.Stretch">
+      <summary>
+            Stretch the image to fill the available area.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.ScaleInner">
+      <summary>
+            Scale the image to fit into the available area.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.ScaleOuter">
+      <summary>
+            Scale the image to fill the whole available area.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.Tile">
+      <summary>
+            The image is tiled across the available area.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeImageLayout.TileStretch">
+      <summary>
+            Tile the image into the 3x3 matrix and stretch it to fill the available area.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.LayoutOrientation">
+      <summary>
+            Defines the different methods of arranging the groups or elements.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.LayoutOrientation.Horizontal">
+      <summary>
+            Groups or elements are horizontally stacked.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.LayoutOrientation.Vertical">
+      <summary>
+            Groups or elements are vertically stacked.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ScrollBarStyle">
+      <summary>
+            Defines the styles of the scroll bar.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ScrollBarStyle.Default">
+      <summary>
+            Scroll bar uses the same style as on Windows 8 start screen.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ScrollBarStyle.System">
+      <summary>
+            The default system scroll bar should appear.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.SymbolSize">
+      <summary>
+            Enumerates the available sizes for tile symbols.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image16x16">
+      <summary>
+            Size of symbol is 16x16, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image24x24">
+      <summary>
+            Size of symbol is 24x24, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image32x32">
+      <summary>
+            Size of symbol is 32x32, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image40x40">
+      <summary>
+            Size of symbol is 40x40, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image48x48">
+      <summary>
+            Size of symbol is 48x48, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image56x56">
+      <summary>
+            Size of symbol is 56x56, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image64x64">
+      <summary>
+            Size of symbol is 64x64, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image80x80">
+      <summary>
+            Size of symbol is 80x80, in pixels.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.SymbolSize.Image96x96">
+      <summary>
+            Size of symbol is 96x96, in pixels.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TileSymbol">
+      <summary>
+            Enumerates the tile symbols.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Power">
+      <summary>
+            Displays the Power symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Previous">
+      <summary>
+            Displays the Previous symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Next">
+      <summary>
+            Displays the Next symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Play">
+      <summary>
+            Displays the Play symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Pause">
+      <summary>
+            Displays the Pause symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Stop">
+      <summary>
+            Displays the Stop symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Edit">
+      <summary>
+            Displays the Edit symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.EditMirrored">
+      <summary>
+            Displays the EditMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Save">
+      <summary>
+            Displays the Save symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Delete">
+      <summary>
+            Displays the Delete symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Reject">
+      <summary>
+            Displays the Reject symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Trash">
+      <summary>
+            Displays the Trash symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Add">
+      <summary>
+            Displays the Add symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Remove">
+      <summary>
+            Displays the Remove symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Cancel">
+      <summary>
+            Displays the Cancel symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Accept">
+      <summary>
+            Displays the Accept symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.More">
+      <summary>
+            Displays the More symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Redo">
+      <summary>
+            Displays the Redo symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Undo">
+      <summary>
+            Displays the Undo symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Layout">
+      <summary>
+            Displays the Layout symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Home">
+      <summary>
+            Displays the Home symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Street">
+      <summary>
+            Displays the Street symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Unfavorite">
+      <summary>
+            Displays the Unfavorite symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Favorite">
+      <summary>
+            Displays the Favorite symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FavoriteStarEmpty">
+      <summary>
+            Displays the FavoriteStarEmpty symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AddToFavorite">
+      <summary>
+            Displays the AddToFavorite symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Help">
+      <summary>
+            Displays the Help symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.HelpMirrored">
+      <summary>
+            Displays the HelpMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Settings">
+      <summary>
+            Displays the Settings symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Keyboard">
+      <summary>
+            Displays the Keyboard symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Backspace">
+      <summary>
+            Displays the Backspace symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Cut">
+      <summary>
+            Displays the Cut symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Copy">
+      <summary>
+            Displays the Copy symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Paste">
+      <summary>
+            Displays the Paste symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Filter">
+      <summary>
+            Displays the Filter symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Find">
+      <summary>
+            Displays the Find symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Results">
+      <summary>
+            Displays the Results symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ResultsMirrored">
+      <summary>
+            Displays the ResultsMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.HighPriority">
+      <summary>
+            Displays the HighPriority symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Mail">
+      <summary>
+            Displays the Mail symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Mail2">
+      <summary>
+            Displays the Mail2 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Read">
+      <summary>
+            Displays the Read symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ForwardMail">
+      <summary>
+            Displays the ForwardMail symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ForwardMailMirrored">
+      <summary>
+            Displays the ForwardMailMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Reply">
+      <summary>
+            Displays the Reply symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ReplyMirrored">
+      <summary>
+            Displays the ReplyMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ReplyAll">
+      <summary>
+            Displays the ReplyAll symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ReplyAllMirrored">
+      <summary>
+            Displays the ReplyAllMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Link">
+      <summary>
+            Displays the Link symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Attach">
+      <summary>
+            Displays the Attach symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Accounts">
+      <summary>
+            Displays the Accounts symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ShowBcc">
+      <summary>
+            Displays the ShowBcc symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Bcc">
+      <summary>
+            Displays the Bcc symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Send">
+      <summary>
+            Displays the Send symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Retweet">
+      <summary>
+            Displays the Retweet symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Post">
+      <summary>
+            Displays the Post symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Tools">
+      <summary>
+            Displays the Tools symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Timer">
+      <summary>
+            Displays the Timer symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Device">
+      <summary>
+            Displays the Device symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisconnectNetworkDrive">
+      <summary>
+            Displays the DisconnectNetworkDrive symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MapNetworkDrive">
+      <summary>
+            Displays the MapNetworkDrive symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CloseMetadata">
+      <summary>
+            Displays the CloseMetadata symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CloseMetadataMirrored">
+      <summary>
+            Displays the CloseMetadataMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenMetadata">
+      <summary>
+            Displays the OpenMetadata symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpemMetadataMirrored">
+      <summary>
+            Displays the OpemMetadataMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenInWeb">
+      <summary>
+            Displays the OpenInWeb symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CategoryAZ">
+      <summary>
+            Displays the CategoryAZ symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SaveLocal">
+      <summary>
+            Displays the SaveLocal symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ViewNotifications">
+      <summary>
+            Displays the ViewNotifications symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ZoomIn">
+      <summary>
+            Displays the ZoomIn symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ZoomNeutral">
+      <summary>
+            Displays the ZoomNeutral symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ZoomOut">
+      <summary>
+            Displays the ZoomOut symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Bookmarks">
+      <summary>
+            Displays the Bookmarks symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BookmarksMirrored">
+      <summary>
+            Displays the BookmarksMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Pdf">
+      <summary>
+            Displays the Pdf symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ProtectedPdf">
+      <summary>
+            Displays the ProtectedPdf symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Document">
+      <summary>
+            Displays the Document symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Page">
+      <summary>
+            Displays the Page symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenFile">
+      <summary>
+            Displays the OpenFile symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MoreOptions">
+      <summary>
+            Displays the MoreOptions symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MoreOptionsMirrored">
+      <summary>
+            Displays the MoreOptionsMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.VideoChat">
+      <summary>
+            Displays the VideoChat symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.StartChat">
+      <summary>
+            Displays the StartChat symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.LeaveConversation">
+      <summary>
+            Displays the LeaveConversation symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Comment">
+      <summary>
+            Displays the Comment symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Unpin">
+      <summary>
+            Displays the Unpin symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Pin">
+      <summary>
+            Displays the Pin symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UnpinFromTaskbar">
+      <summary>
+            Displays the UnpinFromTaskbar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.PinToTaskbar">
+      <summary>
+            Displays the PinToTaskbar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Volume">
+      <summary>
+            Displays the Volume symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.VolumeMute">
+      <summary>
+            Displays the VolumeMute symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AlternateAudioTrack">
+      <summary>
+            Displays the AlternateAudioTrack symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ViewAllInfo">
+      <summary>
+            Displays the ViewAllInfo symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BrowseByAlbum">
+      <summary>
+            Displays the BrowseByAlbum symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BrowseByAlbumMirrored">
+      <summary>
+            Displays the BrowseByAlbumMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ViewAllAlbums">
+      <summary>
+            Displays the ViewAllAlbums symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Caption">
+      <summary>
+            Displays the Caption symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Rename">
+      <summary>
+            Displays the Rename symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SetAsLockScreenImage">
+      <summary>
+            Displays the SetAsLockScreenImage symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SetAsTileImage">
+      <summary>
+            Displays the SetAsTileImage symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ExpandTile">
+      <summary>
+            Displays the ExpandTile symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ExpandTileMirrored">
+      <summary>
+            Displays the ExpandTileMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ReduceTile">
+      <summary>
+            Displays the ReduceTile symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ReduceTileMirrored">
+      <summary>
+            Displays the ReduceTileMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Dock">
+      <summary>
+            Displays the Dock symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DockMirrored">
+      <summary>
+            Displays the DockMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CharmsBar">
+      <summary>
+            Displays the CharmsBar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CharmsBarMirrored">
+      <summary>
+            Displays the CharmsBarMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AppBar">
+      <summary>
+            Displays the AppBar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.PreviewLink">
+      <summary>
+            Displays the PreviewLink symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.PostUpdate">
+      <summary>
+            Displays the PostUpdate symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisableUpdates">
+      <summary>
+            Displays the DisableUpdates symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Refresh">
+      <summary>
+            Displays the Refresh symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Rotate">
+      <summary>
+            Displays the Rotate symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SelectAll">
+      <summary>
+            Displays the SelectAll symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.PortraitLandscape">
+      <summary>
+            Displays the PortraitLandscape symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ClearSelection">
+      <summary>
+            Displays the ClearSelection symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ClearSelectionMirrored">
+      <summary>
+            Displays the ClearSelectionMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Import">
+      <summary>
+            Displays the Import symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ImportMirrored">
+      <summary>
+            Displays the ImportMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ImportAllFiles">
+      <summary>
+            Displays the ImportAllFiles symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ImportAllFilesMirrored">
+      <summary>
+            Displays the ImportAllFilesMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Files">
+      <summary>
+            Displays the Files symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SingleFile">
+      <summary>
+            Displays the SingleFile symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ShowAllFiles">
+      <summary>
+            Displays the ShowAllFiles symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Calendar">
+      <summary>
+            Displays the Calendar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Day">
+      <summary>
+            Displays the Day symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Week">
+      <summary>
+            Displays the Week symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Month">
+      <summary>
+            Displays the Month symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MonthMirrored">
+      <summary>
+            Displays the MonthMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CalendarReply">
+      <summary>
+            Displays the CalendarReply symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AllApps">
+      <summary>
+            Displays the AllApps symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AllAppsMirrored">
+      <summary>
+            Displays the AllAppsMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Shop">
+      <summary>
+            Displays the Shop symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenNewWindows">
+      <summary>
+            Displays the OpenNewWindows symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenWith">
+      <summary>
+            Displays the OpenWith symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenWithMirrored">
+      <summary>
+            Displays the OpenWithMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MoveToFolder">
+      <summary>
+            Displays the MoveToFolder symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OpenFileLocation">
+      <summary>
+            Displays the OpenFileLocation symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AddNewFolder">
+      <summary>
+            Displays the AddNewFolder symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UnsyncFolder">
+      <summary>
+            Displays the UnsyncFolder symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SyncFolder">
+      <summary>
+            Displays the SyncFolder symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Placeholder">
+      <summary>
+            Displays the Placeholder symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.View">
+      <summary>
+            Displays the View symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Unlock">
+      <summary>
+            Displays the Unlock symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Lock">
+      <summary>
+            Displays the Lock symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MatchOptions">
+      <summary>
+            Displays the MatchOptions symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ClosedCaptionJPN">
+      <summary>
+            Displays the ClosedCaptionJPN symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ClosedCaptionEuro">
+      <summary>
+            Displays the ClosedCaptionEuro symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ClosedCaption">
+      <summary>
+            Displays the ClosedCaption symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Highlight">
+      <summary>
+            Displays the Highlight symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AlignRight">
+      <summary>
+            Displays the AlignRight symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AlignCenter">
+      <summary>
+            Displays the AlignCenter symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AlignLeft">
+      <summary>
+            Displays the AlignLeft symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.LeftToRight">
+      <summary>
+            Displays the LeftToRight symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RightToLeft">
+      <summary>
+            Displays the RightToLeft symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Font">
+      <summary>
+            Displays the Font symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FontColor">
+      <summary>
+            Displays the FontColor symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FontColorKorean">
+      <summary>
+            Displays the FontColorKorean symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FontStyleKorean">
+      <summary>
+            Displays the FontStyleKorean symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FontSizeDecrease">
+      <summary>
+            Displays the FontSizeDecrease symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FontSizeIncrease">
+      <summary>
+            Displays the FontSizeIncrease symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FontSize">
+      <summary>
+            Displays the FontSize symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Italic">
+      <summary>
+            Displays the Italic symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ItalicGerman">
+      <summary>
+            Displays the ItalicGerman symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ItalicItalian">
+      <summary>
+            Displays the ItalicItalian symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ItalicKorean">
+      <summary>
+            Displays the ItalicKorean symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ItalicRussian">
+      <summary>
+            Displays the ItalicRussian symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ItalicSpanish">
+      <summary>
+            Displays the ItalicSpanish symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Bold">
+      <summary>
+            Displays the Bold symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BoldGerman">
+      <summary>
+            Displays the BoldGerman symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BoldItalian">
+      <summary>
+            Displays the BoldItalian symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BoldKorean">
+      <summary>
+            Displays the BoldKorean symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BoldRussian">
+      <summary>
+            Displays the BoldRussian symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BoldSpanish">
+      <summary>
+            Displays the BoldSpanish symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Underline">
+      <summary>
+            Displays the Underline symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UnderlineGerman">
+      <summary>
+            Displays the UnderlineGerman symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UnderlineItalian">
+      <summary>
+            Displays the UnderlineItalian symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UnderlineKorean">
+      <summary>
+            Displays the UnderlineKorean symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UnderlineRussian">
+      <summary>
+            Displays the UnderlineRussian symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Calculator">
+      <summary>
+            Displays the Calculator symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CellPhone">
+      <summary>
+            Displays the CellPhone symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Phone">
+      <summary>
+            Displays the Phone symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.HangUp">
+      <summary>
+            Displays the HangUp symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Voicemail">
+      <summary>
+            Displays the Voicemail symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Microphone">
+      <summary>
+            Displays the Microphone symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Library">
+      <summary>
+            Displays the Library symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AddressBook">
+      <summary>
+            Displays the AddressBook symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MapAddress">
+      <summary>
+            Displays the MapAddress symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Map">
+      <summary>
+            Displays the Map symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Direction">
+      <summary>
+            Displays the Direction symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CurrentLocation">
+      <summary>
+            Displays the CurrentLocation symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BackToWindow">
+      <summary>
+            Displays the BackToWindow symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FullScreen">
+      <summary>
+            Displays the FullScreen symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ChooseLikeOrDislike">
+      <summary>
+            Displays the ChooseLikeOrDislike symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Dislike">
+      <summary>
+            Displays the Dislike symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Like">
+      <summary>
+            Displays the Like symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Shuffle">
+      <summary>
+            Displays the Shuffle symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RepeatOnce">
+      <summary>
+            Displays the RepeatOnce symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Repeat">
+      <summary>
+            Displays the Repeat symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Details">
+      <summary>
+            Displays the Details symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DetailsMirrored">
+      <summary>
+            Displays the DetailsMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Tag">
+      <summary>
+            Displays the Tag symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Video">
+      <summary>
+            Displays the Video symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.TrimVideo">
+      <summary>
+            Displays the TrimVideo symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Camera">
+      <summary>
+            Displays the Camera symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Crop">
+      <summary>
+            Displays the Crop symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.TakeWebcamPicture">
+      <summary>
+            Displays the TakeWebcamPicture symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.UsbCamera">
+      <summary>
+            Displays the UsbCamera symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RotateCamera">
+      <summary>
+            Displays the RotateCamera symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BrowsePhotos">
+      <summary>
+            Displays the BrowsePhotos symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.PictureLibrary">
+      <summary>
+            Displays the PictureLibrary symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Slideshow">
+      <summary>
+            Displays the Slideshow symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AutoplayStop">
+      <summary>
+            Displays the AutoplayStop symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.LightOff">
+      <summary>
+            Displays the LightOff symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.LightOn">
+      <summary>
+            Displays the LightOn symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ReportHacked">
+      <summary>
+            Displays the ReportHacked symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Permissions">
+      <summary>
+            Displays the Permissions symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RunAsOtherUser">
+      <summary>
+            Displays the RunAsOtherUser symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RunAsAdmin">
+      <summary>
+            Displays the RunAsAdmin symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RunAsService">
+      <summary>
+            Displays the RunAsService symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SwitchApps">
+      <summary>
+            Displays the SwitchApps symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.TouchPointer">
+      <summary>
+            Displays the TouchPointer symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.GoToStart">
+      <summary>
+            Displays the GoToStart symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Tiles">
+      <summary>
+            Displays the Tiles symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ZeroBars">
+      <summary>
+            Displays the ZeroBars symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OneBar">
+      <summary>
+            Displays the OneBar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.TwoBars">
+      <summary>
+            Displays the TwoBars symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ThreeBars">
+      <summary>
+            Displays the ThreeBars symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FourBars">
+      <summary>
+            Displays the FourBars symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit0">
+      <summary>
+            Displays the Digit0 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit1">
+      <summary>
+            Displays the Digit1 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit2">
+      <summary>
+            Displays the Digit2 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit3">
+      <summary>
+            Displays the Digit3 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit4">
+      <summary>
+            Displays the Digit4 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit5">
+      <summary>
+            Displays the Digit5 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit6">
+      <summary>
+            Displays the Digit6 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit7">
+      <summary>
+            Displays the Digit7 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit8">
+      <summary>
+            Displays the Digit8 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Digit9">
+      <summary>
+            Displays the Digit9 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OutlinedHeart">
+      <summary>
+            Displays the OutlinedHeart symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BrokenHeart">
+      <summary>
+            Displays the BrokenHeart symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SolidHeart">
+      <summary>
+            Displays the SolidHeart symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.OutlinedStar">
+      <summary>
+            Displays the OutlinedStar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SolidStar">
+      <summary>
+            Displays the SolidStar symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SBArrowLeft">
+      <summary>
+            Displays the SBArrowLeft symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SBArrowRight">
+      <summary>
+            Displays the SBArrowRight symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SBArrowUp">
+      <summary>
+            Displays the SBArrowUp symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SBArrowDown">
+      <summary>
+            Displays the SBArrowDown symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureLeft">
+      <summary>
+            Displays the DisclosureLeft symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureRight">
+      <summary>
+            Displays the DisclosureRight symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureUp">
+      <summary>
+            Displays the DisclosureUp symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureDown">
+      <summary>
+            Displays the DisclosureDown symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureLeft2">
+      <summary>
+            Displays the DisclosureLeft2 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureRight2">
+      <summary>
+            Displays the DisclosureRight2 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureUp2">
+      <summary>
+            Displays the DisclosureUp2 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.DisclosureDown2">
+      <summary>
+            Displays the DisclosureDown2 symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RemoteDesktopHome">
+      <summary>
+            Displays the RemoteDesktopHome symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.MoreDetails">
+      <summary>
+            Displays the MoreDetails symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.LessDetails">
+      <summary>
+            Displays the LessDetails symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.RemoveSplit">
+      <summary>
+            Displays the RemoveSplit symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SplitHorizontally">
+      <summary>
+            Displays the SplitHorizontally symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.SplitVertically">
+      <summary>
+            Displays the SplitVertically symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Accessibility">
+      <summary>
+            Displays the Accessibility symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.HorizontalDots">
+      <summary>
+            Displays the HorizontalDots symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.VerticalDots">
+      <summary>
+            Displays the VerticalDots symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithSmile">
+      <summary>
+            Displays the CircleWithSmile symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithBalloon">
+      <summary>
+            Displays the CircleWithBalloon symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithFood">
+      <summary>
+            Displays the CircleWithFood symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithWeather">
+      <summary>
+            Displays the CircleWithWeather symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithPlane">
+      <summary>
+            Displays the CircleWithPlane symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithHelpDesk">
+      <summary>
+            Displays the CircleWithHelpDesk symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithChat">
+      <summary>
+            Displays the CircleWithChat symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Sync">
+      <summary>
+            Displays the Sync symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Sort">
+      <summary>
+            Displays the Sort symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Switch">
+      <summary>
+            Displays the Switch symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Options">
+      <summary>
+            Displays the Options symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Download">
+      <summary>
+            Displays the Download symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Upload">
+      <summary>
+            Displays the Upload symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Go">
+      <summary>
+            Displays the Go symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.GoMirrored">
+      <summary>
+            Displays the GoMirrored symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Up">
+      <summary>
+            Displays the Up symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Backward">
+      <summary>
+            Displays the Backward symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Forward">
+      <summary>
+            Displays the Forward symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Shift">
+      <summary>
+            Displays the Shift symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Left">
+      <summary>
+            Displays the Left symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Right">
+      <summary>
+            Displays the Right symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Enter">
+      <summary>
+            Displays the Enter symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.BlockContact">
+      <summary>
+            Displays the BlockContact symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.AddContact">
+      <summary>
+            Displays the AddContact symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Status">
+      <summary>
+            Displays the Status symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Presence">
+      <summary>
+            Displays the Presence symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.People">
+      <summary>
+            Displays the People symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.ContactInfo">
+      <summary>
+            Displays the ContactInfo symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.NavigateBackward">
+      <summary>
+            Displays the NavigateBackward symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.NavigateForward">
+      <summary>
+            Displays the NavigateForward symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FilledBackward">
+      <summary>
+            Displays the FilledBackward symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FilledForward">
+      <summary>
+            Displays the FilledForward symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Circle">
+      <summary>
+            Displays the Circle symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FilledCircle">
+      <summary>
+            Displays the FilledCircle symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithPlus">
+      <summary>
+            Displays the CircleWithPlus symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithMinus">
+      <summary>
+            Displays the CircleWithMinus symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CircleWithMultiply">
+      <summary>
+            Displays the CircleWithMultiply symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FilledPlus">
+      <summary>
+            Displays the FilledPlus symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FilledMinus">
+      <summary>
+            Displays the FilledMinus symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.FilledMultiply">
+      <summary>
+            Displays the FilledMultiply symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CheckBox">
+      <summary>
+            Displays the CheckBox symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CheckFill">
+      <summary>
+            Displays the CheckFill symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CheckComposite">
+      <summary>
+            Displays the CheckComposite symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.CheckReversed">
+      <summary>
+            Displays the CheckReversed symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Emoticon">
+      <summary>
+            Displays the Emoticon symbol.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileSymbol.Emoji2">
+      <summary>
+            Displays the Emoji2 symbol.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ThreeStateBoolean">
+      <summary>
+            Defines a boolean type with an additional state which indicates
+            that the value is not stored here.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ThreeStateBoolean.Default">
+      <summary>
+            The value is not explicitly specified.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ThreeStateBoolean.True">
+      <summary>
+            Corresponds to Boolean true.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ThreeStateBoolean.False">
+      <summary>
+            Corresponds to Boolean false.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TextTrimming">
+      <summary>
+            Defines the method of trimming characters that do not fit in the available space.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextTrimming.None">
+      <summary>
+            Specifies no trimming.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextTrimming.EndEllipsis">
+      <summary>
+            Specifies that the text is trimmed to the nearest character, and an ellipsis is inserted at the end of a trimmed line.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextTrimming.WordEllipsis">
+      <summary>
+            Specifies that text is trimmed to the nearest word, and an ellipsis is inserted at the end of a trimmed line.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextTrimming.PathEllipsis">
+      <summary>
+            The center is removed from trimmed lines and replaced by an ellipsis.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.BackColorSelector">
+      <summary>
+            Defines which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object should be bound
+            to the background color of a template element.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.Default">
+      <summary>
+            Binds to the default background color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.Unbound">
+      <summary>
+            Shows the background color that is defined in the template.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.BackColor1">
+      <summary>
+            Binds to the first additional background color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.BackColor2">
+      <summary>
+            Binds to the second additional background color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.BackColor3">
+      <summary>
+            Binds to the third additional background color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.BackColor4">
+      <summary>
+            Binds to the fourth additional background color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.BackColorSelector.BackColor5">
+      <summary>
+            Binds to the fifth additional background color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ForeColorSelector">
+      <summary>
+            Defines which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object should be bound
+            to the foreground color of a template element.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.Default">
+      <summary>
+            Binds to the default foreground color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.Unbound">
+      <summary>
+            Shows the foreground color that is defined in the template.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.ForeColor1">
+      <summary>
+            Binds to the first additional foreground color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.ForeColor2">
+      <summary>
+            Binds to the second additional foreground color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.ForeColor3">
+      <summary>
+            Binds to the third additional foreground color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.ForeColor4">
+      <summary>
+            Binds to the fourth additional foreground color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ForeColorSelector.ForeColor5">
+      <summary>
+            Binds to the fifth additional foreground color of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ImageSelector">
+      <summary>
+            Defines which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object should be bound
+            to the image of a template element.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Default">
+      <summary>
+            Binds to the default image of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Unbound">
+      <summary>
+            Shows the fixed image defined in the template or a part of that image.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Symbol">
+      <summary>
+            Binds to a symbol defined in a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.UnboundSymbol">
+      <summary>
+            Shows a symbol that is specified in an <see cref="T:C1.Win.C1Tile.ImageElement" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.ImageOrSymbol">
+      <summary>
+            Binds to the default image of a <see cref="T:C1.Win.C1Tile.Tile" /> or to the <see cref="P:C1.Win.C1Tile.Tile.Symbol" /> property if the image is not specified.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Number">
+      <summary>
+            Binds to the "badge number" images (row index may vary from 0 to 100).
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Stars">
+      <summary>
+            Binds to the "5-stars" images (row index may vary from 0 to 10).
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.CommonImage1">
+      <summary>
+            Binds to the first common image in the <see cref="T:C1.Win.C1Tile.C1TileControl" /> object.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.CommonImage2">
+      <summary>
+            Binds to the second common image in the <see cref="T:C1.Win.C1Tile.C1TileControl" /> object.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.CommonImage3">
+      <summary>
+            Binds to the third common image in the <see cref="T:C1.Win.C1Tile.C1TileControl" /> object.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Image1">
+      <summary>
+            Binds to the first additional image of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Image2">
+      <summary>
+            Binds to the second additional image of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Image3">
+      <summary>
+            Binds to the third additional image of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Image4">
+      <summary>
+            Binds to the fourth additional image of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.ImageSelector.Image5">
+      <summary>
+            Binds to the fifth additional image of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.IntValueSelector">
+      <summary>
+            Defines which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object should be bound
+            to an integer value within a template element.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.Default">
+      <summary>
+            Binds to an integer value that is stored in the <see cref="P:C1.Win.C1Tile.Tile.IntValue" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.Unbound">
+      <summary>
+            Uses the template's own value.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.IntValue1">
+      <summary>
+            Binds to an integer value that is stored in the <see cref="P:C1.Win.C1Tile.Tile.IntValue1" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.IntValue2">
+      <summary>
+            Binds to an integer value that is stored in the <see cref="P:C1.Win.C1Tile.Tile.IntValue2" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.IntValue3">
+      <summary>
+            Binds to an integer value that is stored in the <see cref="P:C1.Win.C1Tile.Tile.IntValue3" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.IntValue4">
+      <summary>
+            Binds to an integer value that is stored in the <see cref="P:C1.Win.C1Tile.Tile.IntValue4" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.IntValueSelector.IntValue5">
+      <summary>
+            Binds to an integer value that is stored in the <see cref="P:C1.Win.C1Tile.Tile.IntValue5" /> property.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TileProperty">
+      <summary>
+            Specifies the destination property for data mapping.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.None">
+      <summary>
+            Indicates that no property is referenced.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Tag">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Tag" /> property (the primary key should be mapped to Tag).
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Template">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Template" /> property (mapped as an object, template name, or index in the Templates collection).
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Group">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Group" /> property (mapped as an object or group text).
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ToolTipText">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ToolTipText" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ShowSlides">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ShowSlides" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Visible">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Visible" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.HorizontalSize">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.HorizontalSize" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.VerticalSize">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.VerticalSize" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.LeftCell">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.LeftCell" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.TopCell">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.TopCell" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.BackColor">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.BackColor" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ForeColor">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ForeColor" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Image">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Image" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ImageKey">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ImageKey" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ImageIndex">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ImageIndex" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Symbol">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Symbol" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.IntValue">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.IntValue" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.BackColor1">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.BackColor1" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.BackColor2">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.BackColor2" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.BackColor3">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.BackColor3" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.BackColor4">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.BackColor4" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.BackColor5">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.BackColor5" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ForeColor1">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ForeColor1" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ForeColor2">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ForeColor2" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ForeColor3">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ForeColor3" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ForeColor4">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ForeColor4" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.ForeColor5">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.ForeColor5" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Image1">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Image1" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Image2">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Image2" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Image3">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Image3" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Image4">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Image4" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Image5">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Image5" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.IntValue1">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.IntValue1" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.IntValue2">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.IntValue2" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.IntValue3">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.IntValue3" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.IntValue4">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.IntValue4" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.IntValue5">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.IntValue5" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text1">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text1" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text2">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text2" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text3">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text3" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text4">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text4" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text5">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text5" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text6">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text6" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text7">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text7" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text8">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text8" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.Text9">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.Text9" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.AccessibleDefaultActionDescription">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.AccessibleDefaultActionDescription" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.AccessibleDescription">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.AccessibleDescription" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.AccessibleName">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.AccessibleName" /> property.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TileProperty.AccessibleRole">
+      <summary>
+            References the <see cref="P:C1.Win.C1Tile.Tile.AccessibleRole" /> property.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TextSelector">
+      <summary>
+            Defines which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object should be bound
+            to the text of a template element.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Default">
+      <summary>
+            Binds to the default text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Unbound">
+      <summary>
+            Shows the fixed text string defined in the template.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text1">
+      <summary>
+            Binds to the first additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text2">
+      <summary>
+            Binds to the second additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text3">
+      <summary>
+            Binds to the third additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text4">
+      <summary>
+            Binds to the fourth additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text5">
+      <summary>
+            Binds to the fifth additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text6">
+      <summary>
+            Binds to the sixth additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text7">
+      <summary>
+            Binds to the seventh additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text8">
+      <summary>
+            Binds to the eighth additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Tile.TextSelector.Text9">
+      <summary>
+            Binds to the ninth additional text string of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.CompareGroupsEventArgs">
+      <summary>
+            Provides data for <see cref="E:C1.Win.C1Tile.C1TileControl.CompareGroups" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.CompareGroupsEventArgs.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.CompareGroupsEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CompareGroupsEventArgs.Group1">
+      <summary>
+            Gets the first group to compare.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CompareGroupsEventArgs.Group2">
+      <summary>
+            Gets the second group to compare.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CompareGroupsEventArgs.Result">
+      <summary>
+            Gets or sets a signed integer that indicates the relative values of <see cref="P:C1.Win.C1Tile.CompareGroupsEventArgs.Group1" /> and <see cref="P:C1.Win.C1Tile.CompareGroupsEventArgs.Group2" />
+            as follow: less than 0 (if Group1 is less than Group2), zero (if Group1 equals Group2), greater than zero
+            (if Group1 is greater than Group2).
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.CompareTilesEventArgs">
+      <summary>
+            Provides data for <see cref="E:C1.Win.C1Tile.C1TileControl.CompareTiles" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.CompareTilesEventArgs.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.CompareTilesEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CompareTilesEventArgs.Tile1">
+      <summary>
+            Gets the first tile to compare.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CompareTilesEventArgs.Tile2">
+      <summary>
+            Gets the second tile to compare.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CompareTilesEventArgs.Result">
+      <summary>
+            Gets or sets a signed integer that indicates the relative values of <see cref="P:C1.Win.C1Tile.CompareTilesEventArgs.Tile1" /> and <see cref="P:C1.Win.C1Tile.CompareTilesEventArgs.Tile2" />
+            as follow: less than 0 (if Tile1 is less than Tile2), zero (if Tile1 equals Tile2), greater than zero
+            (if Tile1 is greater than Tile2).
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.FilterItemEventArgs">
+      <summary>
+            Provides data for <see cref="E:C1.Win.C1Tile.C1TileControl.FilterItem" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.FilterItemEventArgs.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.FilterItemEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FilterItemEventArgs.Item">
+      <summary>
+            Gets the data item under consideration.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FilterItemEventArgs.Skip">
+      <summary>
+            Gets or sets a value indicating whether the item should be skipped.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.FormatValueEventArgs">
+      <summary>
+            Provides data for <see cref="E:C1.Win.C1Tile.C1TileControl.FormatValue" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.FormatValueEventArgs.#ctor(C1.Win.C1Tile.PropertyMapping)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.FormatValueEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FormatValueEventArgs.Mapping">
+      <summary>
+            Gets the <see cref="T:C1.Win.C1Tile.PropertyMapping" /> object.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FormatValueEventArgs.TileProperty">
+      <summary>
+            Gets the property of the <see cref="T:C1.Win.C1Tile.Tile" /> object that is a destination for mapping.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FormatValueEventArgs.DestinationType">
+      <summary>
+            Gets the destination type for the <see cref="P:C1.Win.C1Tile.FormatValueEventArgs.Value" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FormatValueEventArgs.Item">
+      <summary>
+            Gets the data item under consideration.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.FormatValueEventArgs.Value">
+      <summary>
+            Gets or sets a value that will be assigned to the property of a <see cref="T:C1.Win.C1Tile.Tile" /> object.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TemplatePaintEventHandler">
+      <summary>
+            Represents a delegate that handles <see cref="E:C1.Win.C1Tile.Template.Paint" /> event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TemplatePaintEventArgs">
+      <summary>
+            Provides data for <see cref="E:C1.Win.C1Tile.Template.Paint" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplatePaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,C1.Win.C1Tile.Tile)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.TemplatePaintEventArgs" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplatePaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,C1.Win.C1Tile.Tile,C1.Win.C1Tile.Slide)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.TemplatePaintEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TemplatePaintEventArgs.Tile">
+      <summary>
+            Gets the <see cref="P:C1.Win.C1Tile.TemplatePaintEventArgs.Tile" /> object providing data for the template.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TemplatePaintEventArgs.Slide">
+      <summary>
+            Gets the currently drawn <see cref="P:C1.Win.C1Tile.TemplatePaintEventArgs.Slide" /> object or null for the main template.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TileEventArgs">
+      <summary>
+            Provides data for <see cref="T:C1.Win.C1Tile.C1TileControl" /> events.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileEventArgs.#ctor(C1.Win.C1Tile.Tile)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.TileEventArgs" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TileEventArgs.Tile">
+      <summary>
+            Gets the <see cref="P:C1.Win.C1Tile.TileEventArgs.Tile" /> object affected by the event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.CommonImage">
+      <summary>
+            Represents an image or set of images that can be referenced
+            from an <see cref="T:C1.Win.C1Tile.ImageElement" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.CommonImage.#ctor(C1.Win.C1Tile.C1TileControl)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.CommonImage" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.CommonImage.Dispose">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CommonImage.Image">
+      <summary>
+            Gets or sets the image. It may consist of several rows and/or columns.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CommonImage.ImageRows">
+      <summary>
+            Gets or sets the number rows in the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.CommonImage.ImageColumns">
+      <summary>
+            Gets or sets the number of columns in the compound image.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.MappingLookup">
+      <summary>
+            Maps a foreign key value to a meaningful value from another data table.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.MappingLookup.DataSource">
+      <summary>
+            Gets or sets the data source object for the lookup.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.MappingLookup.ValueMember">
+      <summary>
+            Gets or sets the field to use as the source of value (primary key) matching the foreign key in <see cref="P:C1.Win.C1Tile.PropertyMapping.DataField" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.MappingLookup.DisplayMember">
+      <summary>
+            Gets or sets the field to use as the source of meaningful value.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.PropertyMapping">
+      <summary>
+            Establishes an association between the property of an item from data source
+            and the property of the corresponding <see cref="T:C1.Win.C1Tile.Tile" /> component.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PropertyMapping.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.PropertyMapping" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PropertyMapping.CloneMapping">
+      <summary>
+            Creates a copy of the current <see cref="T:C1.Win.C1Tile.PropertyMapping" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PropertyMapping.Clone">
+      <summary>
+            Creates a new <see cref="T:C1.Win.C1Tile.PropertyMapping" /> that is a copy of the current instance.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PropertyMapping.TileControl">
+      <summary>
+            Gets the owner <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PropertyMapping.Comment">
+      <summary>
+            Gets or sets the comment for the <see cref="T:C1.Win.C1Tile.PropertyMapping" /> object.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PropertyMapping.DataField">
+      <summary>
+            Gets or sets the field of the data source which is mapped to the tile property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PropertyMapping.Lookup">
+      <summary>
+            Encapsulates the lookup properties.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PropertyMapping.ShouldSerializeLookup">
+      <summary>
+            This member is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PropertyMapping.TileProperty">
+      <summary>
+            Gets or sets the property of the <see cref="T:C1.Win.C1Tile.Tile" /> object that is a destination for mapping.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ElementCollection">
+      <summary>
+            Represents a collection of template elements.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ElementCollection.Clear(System.Boolean)">
+      <summary>
+            Removes all elements from the collection, then disposes the elements.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ElementCollection.InsertItem(System.Int32,C1.Win.C1Tile.BaseElement)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1Tile.BaseElement" /> into the <see cref="T:C1.Win.C1Tile.ElementCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ElementCollection.SetItem(System.Int32,C1.Win.C1Tile.BaseElement)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1Tile.BaseElement" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ElementCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the item at the specified index of the <see cref="T:C1.Win.C1Tile.ElementCollection" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ElementCollection.ClearItems">
+      <summary>
+            Removes all items from the <see cref="T:C1.Win.C1Tile.ElementCollection" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.GroupCollection">
+      <summary>
+            Represents a collection of groups.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.GroupCollection.Item(System.String)">
+      <summary>
+            Gets the first <see cref="T:C1.Win.C1Tile.Group" /> with the specified name in the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.Contains(System.String)">
+      <summary>
+            Determines whether this collection contains a <see cref="T:C1.Win.C1Tile.Group" /> with the specified name.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.IndexOf(System.String)">
+      <summary>
+            Determines index of the first <see cref="T:C1.Win.C1Tile.Group" /> with the specified name in the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.Remove(System.String)">
+      <summary>
+            Removes the first occurrence of the <see cref="T:C1.Win.C1Tile.Group" /> with the specified name from the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.Clear(System.Boolean)">
+      <summary>
+            Removes all groups from the collection, then disposes the groups.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.InsertItem(System.Int32,C1.Win.C1Tile.Group)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1Tile.Group" /> into the <see cref="T:C1.Win.C1Tile.GroupCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.SetItem(System.Int32,C1.Win.C1Tile.Group)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1Tile.Group" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the item at the specified index of the <see cref="T:C1.Win.C1Tile.GroupCollection" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.GroupCollection.ClearItems">
+      <summary>
+            Removes all items from the <see cref="T:C1.Win.C1Tile.GroupCollection" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.MappingCollection">
+      <summary>
+            Represents a collection of data mapping objects.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.MappingCollection.Item(C1.Win.C1Tile.TileProperty)">
+      <summary>
+            Gets the first <see cref="T:C1.Win.C1Tile.PropertyMapping" /> for the specified tile property.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.MappingCollection.Contains(C1.Win.C1Tile.TileProperty)">
+      <summary>
+            Determines whether this collection contains a <see cref="T:C1.Win.C1Tile.PropertyMapping" /> for the specified tile property.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.MappingCollection.IndexOf(C1.Win.C1Tile.TileProperty)">
+      <summary>
+            Determines index of the first <see cref="T:C1.Win.C1Tile.PropertyMapping" /> for the specified tile property.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.MappingCollection.Remove(C1.Win.C1Tile.TileProperty)">
+      <summary>
+            Removes the first occurrence of the <see cref="T:C1.Win.C1Tile.PropertyMapping" /> for the specified tile property from the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.MappingCollection.InsertItem(System.Int32,C1.Win.C1Tile.PropertyMapping)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1Tile.PropertyMapping" /> into the <see cref="T:C1.Win.C1Tile.MappingCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.MappingCollection.SetItem(System.Int32,C1.Win.C1Tile.PropertyMapping)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1Tile.PropertyMapping" /> at the specified index.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.SlideCollection">
+      <summary>
+            Represents a collection of template slides.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.SlideCollection.Clear(System.Boolean)">
+      <summary>
+            Removes all slides from the collection, then disposes the slides.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.SlideCollection.InsertItem(System.Int32,C1.Win.C1Tile.Slide)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1Tile.Slide" /> into the <see cref="T:C1.Win.C1Tile.SlideCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.SlideCollection.SetItem(System.Int32,C1.Win.C1Tile.Slide)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1Tile.Slide" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.SlideCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the item at the specified index of the <see cref="T:C1.Win.C1Tile.SlideCollection" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.SlideCollection.ClearItems">
+      <summary>
+            Removes all items from the <see cref="T:C1.Win.C1Tile.SlideCollection" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TemplateCollection">
+      <summary>
+            Represents a collection of tile templates.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TemplateCollection.Item(System.String)">
+      <summary>
+            Gets the first <see cref="T:C1.Win.C1Tile.Template" /> with the specified name in the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplateCollection.Contains(System.String)">
+      <summary>
+            Determines whether this collection contains a <see cref="T:C1.Win.C1Tile.Template" /> with the specified name.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplateCollection.IndexOf(System.String)">
+      <summary>
+            Determines index of the first <see cref="T:C1.Win.C1Tile.Template" /> with the specified name in the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplateCollection.Remove(System.String)">
+      <summary>
+            Removes the first occurrence of the <see cref="T:C1.Win.C1Tile.Template" /> with the specified name from the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplateCollection.Clear(System.Boolean)">
+      <summary>
+            Removes all templates from the collection, then disposes the templates.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplateCollection.InsertItem(System.Int32,C1.Win.C1Tile.Template)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1Tile.Template" /> into the <see cref="T:C1.Win.C1Tile.TemplateCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TemplateCollection.SetItem(System.Int32,C1.Win.C1Tile.Template)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1Tile.Template" /> at the specified index.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TileCollection">
+      <summary>
+            Represents a collection of tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TileCollection.Item(System.String)">
+      <summary>
+            Gets the first <see cref="T:C1.Win.C1Tile.Tile" /> with the specified name in the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.Contains(System.String)">
+      <summary>
+            Determines whether this collection contains a <see cref="T:C1.Win.C1Tile.Tile" /> with the specified name.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.IndexOf(System.String)">
+      <summary>
+            Determines index of the first <see cref="T:C1.Win.C1Tile.Tile" /> with the specified name in the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.Remove(System.String)">
+      <summary>
+            Removes the first occurrence of the <see cref="T:C1.Win.C1Tile.Tile" /> with the specified name from the collection.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.Clear(System.Boolean)">
+      <summary>
+            Removes all tiles from the collection, then disposes the tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.InsertItem(System.Int32,C1.Win.C1Tile.Tile)">
+      <summary>
+            Inserts a <see cref="T:C1.Win.C1Tile.Tile" /> into the <see cref="T:C1.Win.C1Tile.TileCollection" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.SetItem(System.Int32,C1.Win.C1Tile.Tile)">
+      <summary>
+            Replaces the <see cref="T:C1.Win.C1Tile.Tile" /> at the specified index.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the item at the specified index of the <see cref="T:C1.Win.C1Tile.TileCollection" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TileCollection.ClearItems">
+      <summary>
+            Removes all items from the <see cref="T:C1.Win.C1Tile.TileCollection" />.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.BaseElement">
+      <summary>
+            The base class for all template elements.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.BaseElement.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.BaseElement.Dispose">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.BaseElement.CreateInstance">
+      <summary>
+            Creates an instance of the element copy.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.BaseElement.CopySettingsFrom(C1.Win.C1Tile.BaseElement)">
+      <summary>
+            Copies settings from the given element.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.BaseElement.Clone">
+      <summary>
+            Creates a new <see cref="T:C1.Win.C1Tile.BaseElement" /> that is a copy of the current instance.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.BaseElement.Description">
+      <summary>
+            Gets or sets the description for this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.BaseElement.Margin">
+      <summary>
+            Gets or sets the outer spacing of the element.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.BaseElement.ResetMargin">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.BaseElement.Margin" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.BaseElement.Alignment">
+      <summary>
+            Gets or sets the alignment of element within its parent bounds.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.BaseElement.AlignmentOfContents">
+      <summary>
+            Gets or sets the alignment of contents within the element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.BaseElement.FixedWidth">
+      <summary>
+            Gets or sets the fixed width of the contents, if appropriate. Set to 0 to calculate width dynamically.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.BaseElement.FixedHeight">
+      <summary>
+            Gets or sets the fixed height of the contents, if appropriate. Set to 0 to calculate height dynamically.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.ImageElement">
+      <summary>
+            The element drawing an image.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ImageElement.#ctor">
+      <summary>
+            Initializes a new instance of an <see cref="T:C1.Win.C1Tile.ImageElement" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ImageElement.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ImageElement.CreateInstance">
+      <summary>
+            Creates an instance of the <see cref="T:C1.Win.C1Tile.ImageElement" /> element copy.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ImageElement.CopySettingsFrom(C1.Win.C1Tile.BaseElement)">
+      <summary>
+            Copies settings from the given element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.Image">
+      <summary>
+            Gets or sets the image to display in unbound mode. It may consist of several
+            parts. Only one part of a compound image can be displayed at a time.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.Symbol">
+      <summary>
+            Gets or sets a symbol to display in "UnboundSymbol" mode.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ImageSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of an image that will be drawn by this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ImageLayout">
+      <summary>
+            Gets or sets the type of image layout.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ImageRows">
+      <summary>
+            Gets or sets the number rows in the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ImageColumns">
+      <summary>
+            Gets or sets the number of columns in the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.RowIndex">
+      <summary>
+            Gets or sets the index of a row within the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.RowIndexSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of a row index within the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ColumnIndex">
+      <summary>
+            Gets or sets the index of a column within the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ColumnIndexSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of a column index within the compound image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ForeColor">
+      <summary>
+            Gets or sets the foreground color for symbols, numbers, and stars.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.ImageElement.ResetForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.ImageElement.ForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.ForeColorSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of foreground color for this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.ImageElement.SymbolSize">
+      <summary>
+            Gets or sets a value specifing the size of a symbol.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.PanelElement">
+      <summary>
+            The panel element containing other elements.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PanelElement.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.PanelElement" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PanelElement.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PanelElement.CreateInstance">
+      <summary>
+            Creates an instance of the <see cref="T:C1.Win.C1Tile.PanelElement" /> element copy.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PanelElement.CopySettingsFrom(C1.Win.C1Tile.BaseElement)">
+      <summary>
+            Copies settings from the given element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.Visible">
+      <summary>
+            Gets or sets whether the panel element is visible.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.VisibleSelector">
+      <summary>
+            Gets or sets a value indicating which integer property of a <see cref="T:C1.Win.C1Tile.Tile" />
+            object is checked to determine whether the panel element is visible,
+            if the property value is not equal to zero.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.Children">
+      <summary>
+            Gets the collection of child elements contained in this <see cref="T:C1.Win.C1Tile.PanelElement" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.Orientation">
+      <summary>
+            Gets or sets whether the child elements are arranged horizontally or vertically.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.ChildSpacing">
+      <summary>
+            Gets or sets the amount of space between child elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.BackColor">
+      <summary>
+            Gets or sets the background color of the panel element.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PanelElement.ResetBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.PanelElement.BackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.BackColorSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of background color for this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.Padding">
+      <summary>
+            Gets or sets the interior spacing of the <see cref="T:C1.Win.C1Tile.PanelElement" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.PanelElement.ResetPadding">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.PanelElement.Padding" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.PanelElement.Dock">
+      <summary>
+            Gets or sets which panel borders are docked to its parent element.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.TextElement">
+      <summary>
+            The element drawing some text.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TextElement.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.TextElement" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TextElement.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TextElement.CreateInstance">
+      <summary>
+            Creates an instance of the <see cref="T:C1.Win.C1Tile.TextElement" /> element copy.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TextElement.CopySettingsFrom(C1.Win.C1Tile.BaseElement)">
+      <summary>
+            Copies settings from the given element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.Text">
+      <summary>
+            Gets or sets the text displayed in unbound mode.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.TextSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of text that will be displayed by this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.ForeColor">
+      <summary>
+            Gets or sets the foreground color of the text element.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TextElement.ResetForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.TextElement.ForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.ForeColorSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of foreground color for this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.BackColor">
+      <summary>
+            Gets or sets the text background color.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.TextElement.ResetBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.TextElement.BackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.BackColorSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of background color for this element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.Font">
+      <summary>
+            Gets or sets the font for the text element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.FontSize">
+      <summary>
+            Gets or sets the font size for the text element.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.FontBold">
+      <summary>
+            Gets or sets a value that indicates whether the element shows bold text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.FontItalic">
+      <summary>
+            Gets or sets a value that indicates whether the element shows italic text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.FontUnderline">
+      <summary>
+            Gets or sets a value that indicates whether the element shows underlined text.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.FontStrikeout">
+      <summary>
+            Gets or sets a value that indicates whether the element shows text with a line through the middle.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.FontPadding">
+      <summary>
+            Gets or sets whether the text bounding rectangle should include padding (only if the text has background).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.MeasureTrailingSpaces">
+      <summary>
+            Gets or sets whether the text bounding rectangle includes the trailing space at the end of each line (only if the text has no background).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.DirectionVertical">
+      <summary>
+            Gets or sets whether the text is vertically aligned (if so the background color is not used).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.RightToLeft">
+      <summary>
+            Gets or sets whether the text should be displayed from right to left.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.SingleLine">
+      <summary>
+            Gets or sets whether text should be displayed in a single line.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.TextElement.TextTrimming">
+      <summary>
+            Gets or sets how to trim characters that do not fit in the space available.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.Localization.DesignStrings">
+      <summary>
+            The <see cref="T:C1.Win.C1Tile.Localization.DesignStrings.Strings" /> class contains static properties used for localization.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Localization.DesignStrings.ResourceManager">
+      <summary>
+            The <see cref="P:C1.Win.C1Tile.Localization.DesignStrings.ResourceManager" /> object used for lookup resources.
+            </summary>
+      <remarks>Set this property to the valid value if 
+            you define resources in a Custom Control assembly.</remarks>
+    </member>
+    <member name="P:C1.Win.C1Tile.Localization.DesignStrings.UICulture">
+      <summary>
+            Returns default <see cref="T:System.Globalization.CultureInfo" /> object used as fallback culture.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.Localization.Strings">
+      <summary>
+            The <see cref="T:C1.Win.C1Tile.Localization.Strings" /> class contains static properties used for localization.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Localization.Strings.ResourceManager">
+      <summary>
+            The <see cref="P:C1.Win.C1Tile.Localization.Strings.ResourceManager" /> object used for lookup resources.
+            </summary>
+      <remarks>Set this property to the valid value if 
+            you define resources in a Custom Control assembly.</remarks>
+    </member>
+    <member name="P:C1.Win.C1Tile.Localization.Strings.UICulture">
+      <summary>
+            Returns default <see cref="T:System.Globalization.CultureInfo" /> object used as fallback culture.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.Group">
+      <summary>
+            Represents a group of tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Group.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.Group" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Group.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.IsDisposed">
+      <summary>
+            Gets a value indicating whether the <see cref="T:C1.Win.C1Tile.Group" /> has been disposed.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Name">
+      <summary>
+            Gets or sets the unique name for this <see cref="T:C1.Win.C1Tile.Group" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.TileControl">
+      <summary>
+            Gets the owner <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Index">
+      <summary>
+            Gets or sets the index of group in owner <see cref="P:C1.Win.C1Tile.C1TileControl.Groups" /> collection.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Tag">
+      <summary>
+            Gets or sets an object that contains additional data about the <see cref="T:C1.Win.C1Tile.Group" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Tiles">
+      <summary>
+            Gets the collection of tiles.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.X">
+      <summary>
+            Gets the X-coordinate of the group relative to the scrollable surface, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Y">
+      <summary>
+            Gets the Y-coordinate of the group relative to the scrollable surface, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Width">
+      <summary>
+            Gets the width of the tile group, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Height">
+      <summary>
+            Gets the height of the tile group, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Text">
+      <summary>
+            Gets or sets the group title.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Group.Visible">
+      <summary>
+            Gets or sets whether the <see cref="T:C1.Win.C1Tile.Group" /> is visible.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.Group.Paint">
+      <summary>
+            Occurs when the group is redrawing.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Group.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.Group.Paint" /> event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.Slide">
+      <summary>
+            Defines a slide within the tile template.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Slide.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.Slide" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Slide.Dispose">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Slide.Clone">
+      <summary>
+            Creates a new <see cref="T:C1.Win.C1Tile.Slide" /> that is a copy of the current instance.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.Template">
+      <summary>
+            Gets the owner <see cref="P:C1.Win.C1Tile.Slide.Template" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.Elements">
+      <summary>
+            Gets the collection of elements within a <see cref="T:C1.Win.C1Tile.Slide" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.Description">
+      <summary>
+            Gets or sets the description for this <see cref="T:C1.Win.C1Tile.Slide" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Slide.ResetDescription">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Slide.Description" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.BackColor">
+      <summary>
+            Gets or sets the background color for the slide.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Slide.ResetBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Slide.BackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.BackColorSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of background color for this slide.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.Transition">
+      <summary>
+            Gets or sets the transition to this slide.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.TransitionAcceleration">
+      <summary>
+            Gets or sets the acceleration (if value &gt; 1.0) or deceleration (if value &lt; 1.0) of the transition.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.TransitionDuration">
+      <summary>
+            Gets or sets the lenght of transition to this slide, in milliseconds.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.AdvanceSlideAfter">
+      <summary>
+            Gets or sets the duration before moving to the next slide, in milliseconds.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Slide.AdvanceVariance">
+      <summary>
+            Gets or sets the maximum allowable discrepancy from <see cref="P:C1.Win.C1Tile.Slide.AdvanceSlideAfter" />, in milliseconds.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.Template">
+      <summary>
+            Defines a custom template for tiles.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.Template" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.CloneTemplate">
+      <summary>
+            Creates a copy of the current <see cref="T:C1.Win.C1Tile.Template" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.Clone">
+      <summary>
+            Creates a new <see cref="T:C1.Win.C1Tile.Template" /> that is a copy of the current instance.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.IsDisposed">
+      <summary>
+            Gets a value indicating whether the <see cref="T:C1.Win.C1Tile.Template" /> has been disposed.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.Name">
+      <summary>
+            Gets or sets the unique name for this <see cref="T:C1.Win.C1Tile.Template" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.TileControl">
+      <summary>
+            Gets the owner <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.IsDefault">
+      <summary>
+            Gets a value indicating if this is the default template for a <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.Enabled">
+      <summary>
+            Gets or sets whether the associated tile is enabled, i.e. it can be pressed, checked, or moved by the end user.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.EnabledSelector">
+      <summary>
+            Gets or sets a value indicating which integer property of a <see cref="T:C1.Win.C1Tile.Tile" />
+            object is checked to determine whether the tile is enabled, if the property
+            value is not equal to zero.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.Elements">
+      <summary>
+            Gets the collection of template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.TopmostElements">
+      <summary>
+            Gets the collection of elements that appear above all slides.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.Slides">
+      <summary>
+            Gets the collection of template slides.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.Description">
+      <summary>
+            Gets or sets the description for this <see cref="T:C1.Win.C1Tile.Template" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.ResetDescription">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Template.Description" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.BackColor">
+      <summary>
+            Gets or sets the background color for tiles drawn with this template.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.ResetBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Template.BackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.BackColorSelector">
+      <summary>
+            Gets or sets a value indicating which property of a <see cref="T:C1.Win.C1Tile.Tile" /> object
+            behaves as the source of background color for this template.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.Padding">
+      <summary>
+            Gets or sets the interior spacing of the <see cref="T:C1.Win.C1Tile.Template" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.ResetPadding">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Template.Padding" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.DefaultHorizontalSize">
+      <summary>
+            Gets or sets the default width of an auto-generated tile, in cells.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Template.DefaultVerticalSize">
+      <summary>
+            Gets or sets the default height of an auto-generated tile, in cells.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.Template.Paint">
+      <summary>
+            Occurs when the template is used for drawing a tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Template.OnPaint(C1.Win.C1Tile.TemplatePaintEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.Template.Paint" /> event.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1Tile.Tile">
+      <summary>
+            Represents a single tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IsDisposed">
+      <summary>
+            Gets a value indicating whether the <see cref="T:C1.Win.C1Tile.Tile" /> has been disposed.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Name">
+      <summary>
+            Gets or sets the unique name for this <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.TileControl">
+      <summary>
+            Gets the owner <see cref="T:C1.Win.C1Tile.C1TileControl" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Group">
+      <summary>
+            Gets or sets the owner group of the <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Index">
+      <summary>
+            Gets or sets the index of tile in owner group's Tiles collection.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Template">
+      <summary>
+            Gets or sets the tile template.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Tag">
+      <summary>
+            Gets or sets an object that contains additional data about the <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.X">
+      <summary>
+            Gets the X-coordinate of the tile relative to the owner group, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Y">
+      <summary>
+            Gets the Y-coordinate of the tile relative to the owner group, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Width">
+      <summary>
+            Gets the width of the tile, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Height">
+      <summary>
+            Gets the height of the tile, in pixels.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.LeftCell">
+      <summary>
+            Gets or sets the ordinal number of the tile's left cell.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.TopCell">
+      <summary>
+            Gets or sets the ordinal number of the tile's top cell.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.HorizontalSize">
+      <summary>
+            Gets or sets the width of the tile, in cells.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.VerticalSize">
+      <summary>
+            Gets or sets the height of the tile, in cells.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ShowSlides">
+      <summary>
+            Gets or sets whether the tile can show slides.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.SlideIndex">
+      <summary>
+            Gets the index of slide that is being displayed on tile, or -1 if the tile in not in slide-show mode.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Visible">
+      <summary>
+            Gets or sets whether the tile is visible.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Checked">
+      <summary>
+            Gets or sets whether the tile is checked.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Enabled">
+      <summary>
+            Gets a value indicating whether the tile is enabled.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text">
+      <summary>
+            Gets or sets the text on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ToolTipText">
+      <summary>
+            Gets or sets the tooltip text for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.BackColor">
+      <summary>
+            Gets or sets the background color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetBackColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.BackColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ForeColor">
+      <summary>
+            Gets or sets the foreground color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetForeColor">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.ForeColor" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Image">
+      <summary>
+            Gets or sets an image displayed on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ImageIndex">
+      <summary>
+            Gets or sets the index of an image in the <see cref="P:C1.Win.C1Tile.C1TileControl.ImageList" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ImageKey">
+      <summary>
+            Gets or sets the image key in the <see cref="P:C1.Win.C1Tile.C1TileControl.ImageList" />.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Symbol">
+      <summary>
+            Gets or sets a symbol associated with the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IntValue">
+      <summary>
+            Gets or sets an integer value that can be used by template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.BackColor1">
+      <summary>
+            Gets or sets the first additional background color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetBackColor1">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.BackColor1" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.BackColor2">
+      <summary>
+            Gets or sets the second additional background color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetBackColor2">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.BackColor2" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.BackColor3">
+      <summary>
+            Gets or sets the third additional background color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetBackColor3">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.BackColor3" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.BackColor4">
+      <summary>
+            Gets or sets the fourth additional background color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetBackColor4">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.BackColor4" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.BackColor5">
+      <summary>
+            Gets or sets the fifth additional background color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetBackColor5">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.BackColor5" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ForeColor1">
+      <summary>
+            Gets or sets the first additional foreground color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetForeColor1">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.ForeColor1" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ForeColor2">
+      <summary>
+            Gets or sets the second additional foreground color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetForeColor2">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.ForeColor2" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ForeColor3">
+      <summary>
+            Gets or sets the third additional foreground color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetForeColor3">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.ForeColor3" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ForeColor4">
+      <summary>
+            Gets or sets the fourth additional foreground color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetForeColor4">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.ForeColor4" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.ForeColor5">
+      <summary>
+            Gets or sets the fifth additional foreground color for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.ResetForeColor5">
+      <summary>
+            Resets the value of the <see cref="P:C1.Win.C1Tile.Tile.ForeColor5" /> property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Image1">
+      <summary>
+            Gets or sets the first additional image that can be displayed on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Image2">
+      <summary>
+            Gets or sets the second additional image that can be displayed on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Image3">
+      <summary>
+            Gets or sets the third additional image that can be displayed on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Image4">
+      <summary>
+            Gets or sets the fourth additional image that can be displayed on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Image5">
+      <summary>
+            Gets or sets the fifth additional image that can be displayed on the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text1">
+      <summary>
+            Gets or sets the first additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text2">
+      <summary>
+            Gets or sets the second additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text3">
+      <summary>
+            Gets or sets the third additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text4">
+      <summary>
+            Gets or sets the fourth additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text5">
+      <summary>
+            Gets or sets the fifth additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text6">
+      <summary>
+            Gets or sets the sixth additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text7">
+      <summary>
+            Gets or sets the seventh additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text8">
+      <summary>
+            Gets or sets the eighth additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.Text9">
+      <summary>
+            Gets or sets the ninth additional text string for the tile.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IntValue1">
+      <summary>
+            Gets or sets the first additional integer value that can be used by template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IntValue2">
+      <summary>
+            Gets or sets the second additional integer value that can be used by template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IntValue3">
+      <summary>
+            Gets or sets the third additional integer value that can be used by template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IntValue4">
+      <summary>
+            Gets or sets the fourth additional integer value that can be used by template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.IntValue5">
+      <summary>
+            Gets or sets the fifth additional integer value that can be used by template elements.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.AccessibleDefaultActionDescription">
+      <summary>
+            Gets or sets the default action description of the tile for use by accessibility client applications.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.AccessibleDescription">
+      <summary>
+            Gets or sets the description of the tile used by accessibility client applications.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.AccessibleName">
+      <summary>
+            Gets or sets the name of the tile used by accessibility client applications.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Tile.Tile.AccessibleRole">
+      <summary>
+            Gets or sets the accessible role of the tile.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.Tile.Paint">
+      <summary>
+            Occurs when the tile is redrawing, after painting the tile's template.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.Tile.Paint" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.Tile.Click">
+      <summary>
+            Occurs when the tile is clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.OnClick(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.Tile.Click" /> event.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Tile.Tile.CheckedChanged">
+      <summary>
+            Occurs when the tile is checked or unchecked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.OnCheckedChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1Tile.Tile.CheckedChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.PerformClick">
+      <summary>
+            Generates a <see cref="E:C1.Win.C1Tile.Tile.Click" /> event for the tile.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.Invalidate">
+      <summary>
+            Invalidates the tile, causes the <see cref="T:C1.Win.C1Tile.C1TileControl" /> to redraw.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.GetBackColor">
+      <summary>
+            Returns the background color of the tile.
+            </summary>
+      <remarks>
+            This method never returns the Color.Empty value. If the background color
+            is not set for the given <see cref="T:C1.Win.C1Tile.Tile" />, it is obtained from the
+            <see cref="P:C1.Win.C1Tile.C1TileControl.TileBackColor" /> property of the owner control.
+            </remarks>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.GetForeColor">
+      <summary>
+            Returns the foreground color of the tile.
+            </summary>
+      <remarks>
+            This method never returns the Color.Empty value. If the foreground color
+            is not set for the given <see cref="T:C1.Win.C1Tile.Tile" />, it is obtained from the
+            <see cref="P:C1.Win.C1Tile.C1TileControl.TileForeColor" /> property of the owner control.
+            </remarks>
+    </member>
+    <member name="M:C1.Win.C1Tile.Tile.GetImage">
+      <summary>
+            Returns an image from either <see cref="P:C1.Win.C1Tile.C1TileControl.ImageList" /> or
+            the <see cref="P:C1.Win.C1Tile.Tile.Image" /> property of this <see cref="T:C1.Win.C1Tile.Tile" />.
+            </summary>
+    </member>
+  </members>
+</doc>
